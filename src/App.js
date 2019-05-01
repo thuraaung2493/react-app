@@ -1,30 +1,30 @@
-import React from 'react';
-import List from './List';
-import Add from './Add';
+import React from "react";
+import List from "./List";
+import Add from "./Add";
 
 class App extends React.Component {
   state = {
-    data: ['Apple', 'Orange']
+    data: ["Apple", "Orange"]
   };
 
-  add = (name) => {
+  add = name => {
     this.setState({
-      data: [ ...this.state.data, name ]
+      data: [...this.state.data, name]
     });
-  }
+  };
 
-  remove = (name) => {
+  remove = name => {
     this.setState({
       data: this.state.data.filter(item => item !== name)
     });
-  }
+  };
 
   render() {
     return (
       <div>
-        <List data={this.state.data} remove={this.remove}/>
+        <List data={this.state.data} remove={this.remove} />
 
-        <Add add={this.add}/>
+        <Add add={this.add} />
       </div>
     );
   }
